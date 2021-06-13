@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  propertyName: MyString
+  rent: 1
+  railName: MyString
+  buildAge: 1
+  address: MyString
+  note: MyText
+
+two:
+  propertyName: MyString
+  rent: 1
+  railName: MyString
+  buildAge: 1
+  address: MyString
+  note: MyText

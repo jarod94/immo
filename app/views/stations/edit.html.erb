@@ -1,0 +1,16 @@
+<%= form.fields_for :nearest_stations do | nearest_station | %>
+  <h2>最寄駅<%= nearest_station.index + 1 %></h2>
+  <div class="field">
+    <%= nearest_station.label :route_name ,"路線名" %>
+    <%= nearest_station.text_field :route_name %>
+  </div>
+  <div class="field">
+    <%= nearest_station.label :station ,"駅名"%>
+    <%= nearest_station.text_field :station %>
+  </div>
+  <div class="field">
+    <%= nearest_station.label :minutes_foot ,"徒歩数"%>
+    <%= nearest_station.text_field :minutes_foot %>
+  </div>
+  <div class="delete_station"></div>
+<% end %>

@@ -1,0 +1,28 @@
+<%= form_with(model: Property.new) do |form| %>
+
+  <div class="Property_Name">
+    <%= form.label :Property %>
+    <%= form.text_field :propertyName %>
+  </div>
+  <div class="property_rent">
+    <%= form.label :Rent %>
+    <%= form.text_field :rent %>
+  </div>
+  <div class="property_rail">
+    <%= form.label :RailName %>
+    <%= form.text_field :railName %>
+  </div>
+  <div class="property_age">
+    <%= form.label :Age %>
+    <%= form.text_field :buildAge %>
+  </div>
+  <div class="property_address">
+    <%= form.label :Addresse %>
+    <%= form.text_field :address %>
+  </div>
+  <div class="property_note">
+    <%= form.label :note %>
+    <%= form.text_field :note %>
+  </div>
+  <%= form.submit %>
+<% end %>

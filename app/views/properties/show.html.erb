@@ -1,0 +1,27 @@
+<h1>Détails des properties</h1>
+<p>Property Name: <%= @property.propertyName %></p>
+<p>Rent : <%= @property.rent %></p>
+<p>Rail name: <%= @property.railName%></p>
+<p>Building Age: <%= @property.buildAge %></p>
+<p>Adresse: <%= @property.address %></p>
+<p>Remark: <%= @property.note%></p>
+
+
+<div>
+  <% n = 0 %>
+  <% @property.stations.each do |station| %>
+    <h2>Nearest station<%= n += 1 %></h2>
+      <p>
+        <strong>stationName:</strong><%= station.stationName %>
+      </p>
+      <p>
+        <strong>stationName:</strong><%= station.timeWalk %>
+      </p>
+      <p>
+        <strong>stationName:</strong><%= station.railName %>
+      </p>
+  <% end %>
+</div>
+
+<%= link_to 'edit', edit_property_path %> |
+<%= link_to 'back', properties_path %>

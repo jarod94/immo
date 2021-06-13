@@ -1,0 +1,52 @@
+<%= form_for(@property) do |f| %>
+    <% if @property.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+        <ul>
+        <% property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="station_form">
+
+        <%= f.fields_for :properties do |near| %>
+
+          <%= f.label :propertyName %><br>
+        <%= f.text_field :propertyName %><br>
+          <%= f.label :rent %><br>
+        <%= f.text_field :rent %><br>
+        <%= f.label :railName %><br>
+        <%= f.text_field :railName %><br>
+
+        <%= f.label :buildAge %><br>
+        <%= f.text_field :buildAge %><br>
+        <%= f.label :address %><br>
+      <%= f.text_area :address %><br>
+      <%= f.label :railName %><br>
+      <%= f.text_field :railName %><br>
+
+        <% end %>
+</div>
+
+          <hr>
+          <div class="station_form">
+    <% n = 0 %>
+    <%= f.fields_for :stations do |near| %>
+      <h2>Nearest station<%= n += 1 %></h2>
+      <%= near.label :stationName %><br>
+      <%= near.text_field :stationName %><br>
+      <%= near.label :timeWalk %><br>
+      <%= near.text_field :timeWalk %><br>
+      <%= near.label :railName %><br>
+      <%= near.text_field :railName %><br>
+    <% end %>
+  </div>
+          <div class="actions">
+            <%= f.submit value:"Register"%>
+          </div>
+    </div>
+    <%= link_to "Retour ", properties_path %>
+  <% end %>

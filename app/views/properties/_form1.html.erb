@@ -1,0 +1,53 @@
+<%= form_for(@property) do |f| %>
+    <% if @property.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+        <ul>
+        <% property.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="container">
+
+
+          <div class="field">
+            <%= f.label :propertyName %>
+            <%= f.text_field :propertyName %>
+          </div>
+
+          <div class="field">
+            <%= f.label :rent %>
+            <%= f.text_field :rent %>
+          </div>
+
+          <div class="field">
+            <%= f.label :railName %>
+            <%= f.text_field :railName %>
+          </div>
+
+          <div class="field">
+            <%= f.label :buildAge %>
+            <%= f.text_field :buildAge %>
+          </div>
+
+          <div class="field">
+            <%= f.label :address %>
+            <%= f.text_area :address %>
+          </div>
+          <hr>
+
+          <div class="field">
+            <%= f.label :note %>
+            <%= f.text_field :note %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit value:"Register"%>
+          </div>
+
+    </div>
+    <%= link_to "Retour ", properties_path %>
+  <% end %>
